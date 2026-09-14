@@ -55,7 +55,7 @@ html, body {
 }
 
 .frame {
-  width: min(1140px, 86vw);
+  width: min(1140px, 90vw);
   height: clamp(110px, 24vh, 250px);
   border: 3.5px solid rgba(255, 255, 255, 0.52);
   display: flex;
@@ -75,12 +75,12 @@ html, body {
   box-shadow: 0 0 65px rgba(255, 255, 255, 0.14);
 }
 
-/* Fluid SVG Wordmark (Locked 72% width with 14% margins on each side) */
+/* Fluid SVG Wordmark */
 .title-svg {
-  width: 72%;
-  max-width: 860px;
+  width: 86%;
+  max-width: 960px;
   height: auto;
-  max-height: 55%;
+  max-height: 65%;
   display: block;
   overflow: visible;
   user-select: none;
@@ -89,7 +89,7 @@ html, body {
 .svg-title-text {
   font-family: 'Space Mono', 'Roboto Mono', 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
   font-weight: 400;
-  font-size: 48px;
+  font-size: 58px;
   letter-spacing: 0.32em;
   fill: #ffffff;
   text-anchor: middle;
@@ -124,20 +124,20 @@ html, body {
   }
 
   .frame {
-    width: 86vw;
-    height: clamp(90px, 20vh, 150px);
+    width: 90vw;
+    height: clamp(95px, 20vh, 150px);
     padding: 8px 16px;
     border-width: 2.5px;
   }
 
   .title-svg {
-    width: 70%;
-    max-height: 50%;
+    width: 85%;
+    max-height: 62%;
   }
 
   .svg-title-text {
-    font-size: 44px;
-    letter-spacing: 0.26em;
+    font-size: 56px;
+    letter-spacing: 0.28em;
   }
 
   .footer {
