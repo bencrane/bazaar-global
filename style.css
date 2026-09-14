@@ -50,18 +50,18 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
 .frame {
-  width: min(1140px, 88vw);
-  height: clamp(120px, 26vh, 260px);
+  width: min(1140px, 86vw);
+  height: clamp(110px, 24vh, 250px);
   border: 3.5px solid rgba(255, 255, 255, 0.52);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 36px;
+  padding: 10px 24px;
   background: rgba(3, 5, 13, 0.2);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -75,12 +75,12 @@ html, body {
   box-shadow: 0 0 65px rgba(255, 255, 255, 0.14);
 }
 
-/* Fluid SVG Wordmark (Generous side margins on all devices) */
+/* Fluid SVG Wordmark (Locked 72% width with 14% margins on each side) */
 .title-svg {
-  width: 80%;
-  max-width: 900px;
+  width: 72%;
+  max-width: 860px;
   height: auto;
-  max-height: 65%;
+  max-height: 55%;
   display: block;
   overflow: visible;
   user-select: none;
@@ -89,8 +89,8 @@ html, body {
 .svg-title-text {
   font-family: 'Space Mono', 'Roboto Mono', 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
   font-weight: 400;
-  font-size: 50px;
-  letter-spacing: 0.38em;
+  font-size: 48px;
+  letter-spacing: 0.32em;
   fill: #ffffff;
   text-anchor: middle;
 }
@@ -120,24 +120,24 @@ html, body {
 /* Mobile Specific Optimizations */
 @media (max-width: 640px) {
   .container {
-    padding: 16px;
+    padding: 12px;
   }
 
   .frame {
-    width: 88vw;
-    height: clamp(90px, 20vh, 160px);
-    padding: 8px 20px;
+    width: 86vw;
+    height: clamp(90px, 20vh, 150px);
+    padding: 8px 16px;
     border-width: 2.5px;
   }
 
   .title-svg {
-    width: 80%;
-    max-height: 70%;
+    width: 70%;
+    max-height: 50%;
   }
 
   .svg-title-text {
-    font-size: 48px;
-    letter-spacing: 0.32em;
+    font-size: 44px;
+    letter-spacing: 0.26em;
   }
 
   .footer {
