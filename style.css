@@ -27,31 +27,46 @@ html, body {
   pointer-events: none;
 }
 
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Container & Centered Card Frame */
 .container {
   position: relative;
   z-index: 2;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .frame {
-  width: min(1180px, 90vw);
-  height: min(280px, 38vh);
-  min-height: 140px;
+  width: min(1140px, 88vw);
+  height: clamp(120px, 26vh, 260px);
   border: 3.5px solid rgba(255, 255, 255, 0.52);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding: 10px 24px;
   background: rgba(3, 5, 13, 0.2);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -60,29 +75,37 @@ html, body {
   box-shadow: 0 0 65px rgba(255, 255, 255, 0.14);
 }
 
-.title {
-  font-family: 'Space Mono', 'Roboto Mono', 'JetBrains Mono', 'SF Mono', 'Cascadia Code', monospace;
-  font-weight: 400;
-  font-size: clamp(1.2rem, 5.2vw, 4.6rem);
-  letter-spacing: clamp(0.22em, 1.2vw, 0.38em);
-  text-indent: clamp(0.22em, 1.2vw, 0.38em); /* Offsets letter-spacing on last letter for exact visual centering */
-  color: #ffffff;
-  text-transform: uppercase;
+/* Fluid SVG Wordmark (Scales mathematically to fit inside the frame on all devices) */
+.title-svg {
+  width: 90%;
+  max-width: 960px;
+  height: auto;
+  max-height: 70%;
+  display: block;
+  overflow: visible;
   user-select: none;
-  white-space: nowrap;
-  max-width: 100%;
+}
+
+.svg-title-text {
+  font-family: 'Space Mono', 'Roboto Mono', 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
+  font-weight: 400;
+  font-size: 50px;
+  letter-spacing: 0.38em;
+  fill: #ffffff;
+  text-anchor: middle;
 }
 
 /* Footer Styling */
 .footer {
   position: fixed;
-  bottom: 28px;
+  bottom: 24px;
   left: 0;
   width: 100%;
   z-index: 2;
   text-align: center;
   pointer-events: none;
   padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .footer p {
@@ -94,52 +117,35 @@ html, body {
   font-weight: 400;
 }
 
-/* Mobile Responsive Breakpoints */
-@media (max-width: 768px) {
+/* Mobile Specific Optimizations */
+@media (max-width: 640px) {
   .container {
-    padding: 16px;
+    padding: 12px;
   }
 
   .frame {
-    width: min(100%, 90vw);
-    height: min(220px, 30vh);
-    min-height: 110px;
-    padding: 0 20px;
+    width: 88vw;
+    height: clamp(90px, 20vh, 160px);
+    padding: 8px 12px;
     border-width: 2.5px;
   }
 
-  .title {
-    font-size: clamp(1.05rem, 5.2vw, 2.2rem);
-    letter-spacing: 0.24em;
-    text-indent: 0.24em;
+  .title-svg {
+    width: 94%;
+    max-height: 75%;
+  }
+
+  .svg-title-text {
+    font-size: 48px;
+    letter-spacing: 0.32em;
   }
 
   .footer {
-    bottom: 20px;
+    bottom: 16px;
   }
 
   .footer p {
-    font-size: 8.5px;
-    letter-spacing: 0.18em;
-  }
-}
-
-@media (max-width: 420px) {
-  .frame {
-    padding: 0 14px;
-    height: min(180px, 26vh);
-    min-height: 95px;
-    border-width: 2px;
-  }
-
-  .title {
-    font-size: clamp(0.95rem, 5.0vw, 1.35rem);
-    letter-spacing: 0.20em;
-    text-indent: 0.20em;
-  }
-
-  .footer p {
-    font-size: 7.5px;
-    letter-spacing: 0.14em;
+    font-size: 8px;
+    letter-spacing: 0.16em;
   }
 }
